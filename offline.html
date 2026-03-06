@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RunRoutes - Offline</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .offline-container {
+            text-align: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            max-width: 500px;
+        }
+        
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .features {
+            margin-top: 2rem;
+            text-align: left;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .features h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .features ul {
+            list-style: none;
+        }
+        
+        .features li {
+            margin: 0.5rem 0;
+            color: #666;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "✓";
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="icon">📡</div>
+        <h1>You're Offline</h1>
+        <p>Don't worry! You can still access your saved routes and create new ones. They'll be synced when you're back online.</p>
+        
+        <div class="features">
+            <h3>Available Offline:</h3>
+            <ul>
+                <li>View saved routes</li>
+                <li>Create new routes</li>
+                <li>Edit existing routes</li>
+                <li>Access cached maps</li>
+            </ul>
+        </div>
+        
+        <button class="btn" onclick="window.location.href='/'">Try Again</button>
+    </div>
+</body>
+</html>
