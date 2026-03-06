@@ -2,7 +2,8 @@
   "name": "RunRoutes - Smart Running Route Generator",
   "short_name": "RunRoutes",
   "description": "Create and discover running routes with elevation profiles",
-  "start_url": "/",
+  "start_url": ".",
+  "scope": ".",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#4CAF50",
@@ -58,34 +59,20 @@
       "purpose": "any maskable"
     }
   ],
-  "screenshots": [
-    {
-      "src": "screenshots/home.jpg",
-      "sizes": "1280x720",
-      "type": "image/jpeg",
-      "platform": "wide",
-      "label": "Home screen of RunRoutes"
-    }
-  ],
   "shortcuts": [
     {
       "name": "New Route",
       "short_name": "New",
       "description": "Create a new route",
-      "url": "/?new",
+      "url": ".",
       "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96" }]
     },
     {
       "name": "Saved Routes",
       "short_name": "Saved",
       "description": "View saved routes",
-      "url": "/?saved",
+      "url": ".",
       "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96" }]
     }
-  ],
-  "related_applications": [],
-  "prefer_related_applications": false,
-  "scope": "/",
-  "lang": "en",
-  "dir": "ltr"
+  ]
 }

@@ -1,3 +1,17 @@
+// Handle GitHub Pages base path
+const getBasePath = () => {
+    if (window.location.hostname.includes('github.io')) {
+        const pathParts = window.location.pathname.split('/');
+        // Remove empty strings and get the repo name
+        const repoName = pathParts[1]; // username.github.io/repo-name/
+        return repoName ? `/${repoName}` : '';
+    }
+    return '';
+};
+
+const basePath = getBasePath();
+console.log('App base path:', basePath);
+
 // Initialize map
 const map = L.map('map').setView([0, 0], 2);
 
