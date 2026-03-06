@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PWA Test</title>
+    <script>
+        window.onload = function() {
+            const results = document.getElementById('results');
+            
+            // Test 1: Check if running on HTTPS or localhost
+            const isSecure = window.isSecureContext;
+            results.innerHTML += `<p>🔒 Secure Context: ${isSecure ? '✅ Yes' : '❌ No'}</p>`;
+            
+            // Test 2: Check manifest
+            const manifestLink = document.querySelector('link[rel="manifest"]');
+            results.innerHTML += `<p>📄 Manifest: ${manifestLink ? manifestLink.href : '❌ Not found'}</p>`;
+            
+            // Test 3: Check service worker
+            if ('serviceWorker' in navigator) {
+                results.innerHTML += `<p>🔄 Service Worker: ✅ Supported</p>`;
+                
+                navigator.serviceWorker.getRegistrations().then(registrations => {
+                    if (registrations.length > 0) {
+                        results.innerHTML += `<p>✅ Active Service Workers: ${registrations.length}</p>`;
+                        registrations.forEach((reg, i) => {
+                            results.innerHTML += `<p>  - Scope: ${reg.scope}</p>`;
+                        });
+                    } else {
+                        results.innerHTML += `<p>❌ No active service workers</p>`;
+                    }
+                });
+            } else {
+                results.innerHTML += `<p>❌ Service Worker: Not supported</p>`;
+            }
+            
+            // Test 4: Check base path
+            results.innerHTML += `<p>📍 Base Path: ${window.appBasePath || '/'}</p>`;
+            
+            // Test 5: Check if installed as PWA
+            if (window.matchMedia('(display-mode: standalone)').matches) {
+                results.innerHTML += `<p>📱 PWA Mode: ✅ Running as installed app</p>`;
+            } else {
+                results.innerHTML += `<p>📱 PWA Mode: Running in browser</p>`;
+            }
+        };
+    </script>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        p { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h2>PWA Installation Test</h2>
+    <div id="results"></div>
+    <p><a href="index.html">Back to App</a></p>
+</body>
+</html>
